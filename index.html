@@ -559,19 +559,12 @@ padding:40px 0;
 
   <div class="amenities-grid">
 
-<div class="amenity-card">
+   <div class="amenity-card">
   <div class="amenity-media">
-    <video 
-      controls 
-      playsinline 
-      preload="none"
-      poster="images/wifi.png">
-      
-      <source src="videos/wifi.mp4" type="video/mp4">
-    </video>
+    <video controls playsinline>
+    <source src="videos/wifi.mp4" type="video/mp4">
+  </video>
   </div>
-</div>
-
   <div class="amenity-content">
     <h3 class="amenity-title">Wi-Fi de Alta Velocidad</h3>
     <p>Conexión estable en toda la propiedad, ideal para trabajo remoto y streaming.</p>
@@ -596,19 +589,12 @@ padding:40px 0;
 </div>
 
 
-<div class="amenity-card">
+    <div class="amenity-card">
   <div class="amenity-media">
-    <video 
-      controls 
-      playsinline 
-      preload="none"
-      poster="images/aire.png">
-      
-      <source src="videos/aire.mp4" type="video/mp4">
-    </video>
+    <video controls playsinline>
+    <source src="videos/aire.mp4" type="video/mp4"> 
+  </video>
   </div>
-</div>
-
   <div class="amenity-content">
     <h3 class="amenity-title">Aire Acondicionado</h3>
     <p>Disponible en todas las áreas para mayor comodidad.</p>
@@ -1057,8 +1043,6 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
-<!-- force update posters -->
 
 </body>
 </html>
-
