@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Propiedad - VERLOFT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ===== LOGO VERLOFT ===== */
+.brand-logo{
+  font-family: 'Montserrat', sans-serif;
+  font-size:32px;
+  font-weight:600;
+  letter-spacing:4px;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+
+  :root{
+  --vino:#5b1b1f;
+  --oro:#c9a24d;
+  --fondo:#faf7f5;
+}
+
+.content-section{
+  padding:40px 20px;
+  animation: fadeIn 0.6s ease;
+}
+
+.section-header h2{
+  color:var(--vino);
+  border-left:5px solid var(--oro);
+  padding-left:15px;
+  margin-bottom:30px;
+}
+
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  overflow:hidden;
+  transition:.4s ease;
+  position:relative;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:var(--oro);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:18px;
+}
+
+.card-content h3{
+  color:var(--vino);
+  margin-bottom:8px;
+}
+
+.card-content p{
+  font-size:14px;
+  color:#555;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+  
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== VARIABLES ===== */
+:root{
+--burgundy:#5a1a1a;
+--burgundy-dark:#3d1111;
+--gold:#c9a961;
+--gold-dark:#a88947;
+--white:#fff;
+--gray:#f8f7f5;
+--text:#2a2a2a;
+}
+
+/* ===== BASE ===== */
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--gray);
+color:var(--text);
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+/* ===== HEADER ===== */
+.header{
+background:linear-gradient(135deg,var(--burgundy-dark),var(--burgundy));
+padding:25px 0;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.header-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.mini-logo{
+width:48px;
+height:48px;
+border:2px solid var(--gold);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--gold);
+font-size:24px;
+}
+
+.header-title h1{color:#fff;font-weight:500}
+.header-title p{color:var(--gold);font-size:14px}
+
+.property-name{
+color:#fff;
+padding:8px 15px;
+border-left:3px solid var(--gold);
+}
+
+/* ===== WELCOME ===== */
+.welcome-section{
+background:#fff;
+padding:60px 0;
+text-align:center;
+}
+
+.welcome-section h2{
+font-size:34px;
+font-weight:300;
+color:var(--burgundy-dark);
+margin-bottom:20px;
+}
+
+.welcome-section p{
+max-width:700px;
+margin:auto;
+color:#666;
+font-size:17px;
+}
+
+/* ===== NAV ===== */
+.nav-tabs{
+  background:#fff;
+  position:sticky;
+  top:100px;
+  z-index:90;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.nav-tabs-container{
+  display:flex;
+  overflow-x:auto;
+}
+
+.nav-tab{
+  flex:1;
+  min-width:150px;
+  padding:18px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-weight:500;
+
+  /* 🔑 AQUÍ ESTÁ LA CLAVE */
+  color:#000;                 /* negro */
+  border-bottom:3px solid transparent;
+  transition:.3s ease;
+}
+
+/* Hover */
+.nav-tab:hover{
+  color:var(--gold);
+}
+
+/* Activo */
+.nav-tab.active{
+  border-bottom-color:var(--gold);
+  color:var(--burgundy-dark);
+  background:var(--gray);
+  font-weight:600;
+}
+
+
+/* ===== SECTIONS ===== */
+.content-section{
+display:none;
+padding:60px 0;
+}
+
+.content-section.active{display:block}
+
+.section-header{
+text-align:center;
+margin-bottom:40px;
+}
+
+.section-header h2{
+color:var(--burgundy-dark);
+margin-bottom:10px;
+}
+
+/* ===== CARDS ===== */
+.amenities-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.amenity-card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.35s ease;
+  position:relative;
+}
+
+/* línea dorada VERLOFT */
+.amenity-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:var(--gold);
+}
+
+.amenity-card:hover{
+  transform:translateY(-6px);
+}
+
+/* CONTENEDOR DE IMAGEN */
+.amenity-media{
+  width:100%;
+  height:260px;           /* 🔥 tamaño visual grande */
+  margin:0;
+  overflow:hidden;
+}
+
+
+
+/* IMAGEN SIN RECORTE */
+.amenity-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;       /* 🔥 CLAVE */
+  display:block;
+}
+
+
+/* CONTENIDO */
+.amenity-content{
+  padding:18px 20px 22px;
+}
+
+.amenity-title{
+  font-size:18px;
+  color:var(--burgundy-dark);
+  margin-bottom:8px;
+}
+
+.amenity-content p{
+  font-size:14px;
+  color:#555;
+  line-height:1.4;
+}
+
+/* ===== INFO INTERNA DE AMENIDADES ===== */
+.amenity-info{
+  margin-top:15px;
+  padding:14px 16px;
+  background:#f8f9fb;
+  border-radius:12px;
+}
+
+.amenity-info h4{
+  font-size:15px;
+  color:var(--burgundy-dark);
+  margin-bottom:8px;
+}
+
+.amenity-info ul{
+  padding-left:18px;
+}
+
+.amenity-info li{
+  font-size:13px;
+  color:#555;
+  margin-bottom:6px;
+  line-height:1.4;
+}
+
+/* Bloque de seguridad */
+.amenity-info.warning{
+  background:#fff3f3;
+  border-left:4px solid #d9534f;
+}
+
+/* ===== ESTUFA & HORNO ===== */
+
+/* Ajuste fino del contenido */
+.amenity-card .amenity-content{
+  padding:20px;
+}
+
+/* Subtítulos (Normas, Cómo usar, Seguridad) */
+.amenity-rules h4{
+  font-size:14px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin:14px 0 6px;
+  color:var(--burgundy-dark);
+}
+
+/* Listas */
+.amenity-rules ul{
+  padding-left:16px;
+  margin:0 0 8px;
+}
+
+.amenity-rules li{
+  font-size:13px;
+  color:#555;
+  line-height:1.4;
+  margin-bottom:5px;
+}
+
+/* Separación visual */
+.amenity-rules h4:not(:first-child){
+  border-top:1px solid rgba(0,0,0,.08);
+  padding-top:10px;
+  margin-top:12px;
+}
+
+
+
+/* ===== EMERGENCY MEJORADO ===== */
+.emergency-card{
+  background:rgba(255,255,255,.06);
+  padding:35px 30px;
+  text-align:left; /* 🔑 clave */
+  border-top:4px solid var(--gold);
+  position:relative;
+}
+
+.emergency-icon{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.emergency-card h3{
+  font-size:20px;
+  font-weight:600;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.emergency-card p{
+  font-size:14px;
+  line-height:1.6;
+  color:rgba(255,255,255,.9);
+  margin-bottom:15px;
+}
+
+/* LISTA DE USOS */
+.emergency-card ul{
+  list-style:none;
+  padding:0;
+  margin:15px 0;
+}
+
+.emergency-card ul li{
+  font-size:14px;
+  margin-bottom:8px;
+  line-height:1.5;
+  color:rgba(255,255,255,.9);
+  padding-left:16px;
+  position:relative;
+}
+
+.emergency-card ul li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--gold);
+  font-weight:700;
+}
+
+/* NOTA IMPORTANTE */
+.emergency-note{
+  font-size:13px;
+  color:rgba(255,255,255,.7);
+  margin-top:15px;
+  font-style:italic;
+}
+
+/* BOTÓN */
+.emergency-card a{
+  display:inline-block;
+  margin-top:18px;
+  background:var(--gold);
+  color:var(--burgundy-dark);
+  padding:12px 22px;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:2px;
+  transition:.3s ease;
+}
+
+.emergency-card a:hover{
+  background:var(--gold-dark);
+}
+
+.emergency-section{
+background:var(--burgundy-dark);
+color:#fff;
+padding:70px 0;
+}
+
+.emergency-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.emergency-card{
+background:rgba(255,255,255,.05);
+padding:30px;
+text-align:center;
+border-top:3px solid var(--gold);
+}
+
+.emergency-card a{
+display:inline-block;
+margin-top:10px;
+background:var(--gold);
+color:var(--burgundy-dark);
+padding:10px 20px;
+text-decoration:none;
+font-weight:600;
+}
+
+.emergency-header h2{
+  color:#fff;
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.emergency-header p{
+  color:rgba(255,255,255,.85);
+  max-width:700px;
+  margin:0 auto 40px;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+background:var(--burgundy-dark);
+color:#ccc;
+text-align:center;
+padding:40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+<div class="container header-content">
+<div style="display:flex;gap:15px;align-items:center">
+<div class="header-title">
+<div class="brand-logo">
+  VERLOFT
+</div>
+
+<p>Guía de Propiedad</p>
+</div>
+</div>
+<div class="property-name">Villa Paraíso</div>
+</div>
+</div>
+
+<!-- WELCOME -->
+<section class="welcome-section">
+<div class="container">
+<h2>Bienvenido a su estadía</h2>
+<p>Esta guía contiene toda la información para disfrutar la propiedad sin inconvenientes.</p>
+</div>
+</section>
+
+<!-- NAV -->
+<div class="nav-tabs">
+<div class="container nav-tabs-container">
+<button class="nav-tab active" onclick="showSection('general',this)">General</button>
+<button class="nav-tab" onclick="showSection('cocina',this)">Cocina</button>
+<button class="nav-tab" onclick="showSection('areas',this)">Áreas Comunes</button>
+<button class="nav-tab" onclick="showSection('habitaciones',this)">Habitaciones</button>
+<button class="nav-tab" onclick="showSection('exterior',this)">Exterior</button>
+<button class="nav-tab" onclick="showSection('tecnologia',this)">Tecnología</button>
+</div>
+</div>
+
+<div class="container">
+
+<!-- SECCIÓN GENERAL -->
+<section id="general" class="content-section active">
+  <div class="section-header">
+    <h2>Información General</h2>
+  </div>
+
+  <div class="amenities-grid">
+
+   <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/wifi.png" alt="Wi-Fi de Alta Velocidad">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Wi-Fi de Alta Velocidad</h3>
+    <p>Conexión estable en toda la propiedad, ideal para trabajo remoto y streaming.</p>
+
+    <div class="amenity-info">
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Nombre de red (SSID) y contraseña disponibles en la guía impresa</li>
+        <li>Conecte hasta varios dispositivos sin límite</li>
+        <li>Recomendado para videollamadas y streaming</li>
+      </ul>
+    </div>
+
+    <div class="amenity-info warning">
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>No reiniciar el router</li>
+        <li>No modificar configuraciones de red</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/aire.png" alt="Aire Acondicionado">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Aire Acondicionado</h3>
+    <p>Disponible en todas las áreas para mayor comodidad.</p>
+
+    <div class="amenity-info">
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Encender con el control remoto asignado</li>
+        <li>Temperatura recomendada: 22–24 °C</li>
+        <li>Usar modo “Cool”</li>
+      </ul>
+    </div>
+
+    <div class="amenity-info warning">
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>Apagar al salir del alojamiento</li>
+        <li>No dejar puertas o ventanas abiertas</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="amenity-card">
+      <div class="amenity-media">
+        <img src="images/estacionamiento.png" alt="Estacionamiento">
+      </div>
+      <div class="amenity-content">
+        <h3 class="amenity-title">Estacionamiento</h3>
+        <p>Espacio de parqueo privado y seguro dentro de la propiedad.</p>
+      </div>
+    </div>
+
+    <div class="amenity-card">
+      <div class="amenity-media">
+        <img src="images/checkin.png" alt="Check-in / Check-out">
+      </div>
+      <div class="amenity-content">
+        <h3 class="amenity-title">Check-in / Check-out</h3>
+        <p>Check-in: 3:00 PM · Check-out: 11:00 AM. Horarios flexibles sujetos a disponibilidad.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECCIÓN COCINA -->
+<section id="cocina" class="content-section">
+  <div class="section-header">
+    <h2>Cocina</h2>
+    <p>Totalmente equipada para su comodidad</p>
+  </div>
+
+  <div class="amenities-grid">
+
+   <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/refrigerador.png" alt="Refrigerador">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Refrigerador</h3>
+    <p>Espacio amplio para alimentos y bebidas.</p>
+
+    <div class="amenity-info">
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>No introducir alimentos calientes</li>
+        <li>Mantener bien cerrada la puerta</li>
+        <li>Desechar alimentos al finalizar la estadía</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/estufa.png" alt="Estufa y Horno">
+  </div>
+
+  <div class="amenity-content">
+    <h3 class="amenity-title">Estufa y Horno</h3>
+    <p>
+      Equipos completamente funcionales para preparar desde comidas rápidas
+      hasta platos completos.
+    </p>
+
+    <div class="amenity-rules">
+
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>No dejar la estufa encendida sin supervisión.</li>
+        <li>Uso exclusivo para huéspedes registrados.</li>
+        <li>No utilizar utensilios plásticos sobre las hornillas.</li>
+        <li>Mantener el área limpia y seca.</li>
+      </ul>
+
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Gire la perilla para encender la hornilla.</li>
+        <li>Ajuste la intensidad del fuego según necesidad.</li>
+        <li>Para el horno, seleccione temperatura y tiempo.</li>
+        <li>Apague completamente al finalizar.</li>
+      </ul>
+
+      <h4>Seguridad</h4>
+      <ul>
+        <li>No permitir uso por niños sin supervisión.</li>
+        <li>Si detecta olor a gas, apague y ventile.</li>
+        <li>Extintor disponible en la cocina.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/cafetera.png" alt="Cafetera">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Cafetera</h3>
+    <p>Perfecta para disfrutar café recién hecho.</p>
+
+    <div class="amenity-info">
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Llenar depósito con agua</li>
+        <li>Colocar café molido o cápsula</li>
+        <li>Presionar botón de encendido</li>
+        <li>Apagar después de usar</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+<!-- SECCIÓN ÁREAS COMUNES -->
+<section id="areas" class="content-section">
+  <div class="section-header">
+    <h2>Áreas Comunes</h2>
+    <p>Espacios diseñados para su confort y convivencia</p>
+  </div>
+
+  <div class="amenities-grid">
+
+    <div class="amenity-card">
+      <div class="amenity-media">
+        <img src="images/sala.png" alt="Sala de Estar">
+      </div>
+      <div class="amenity-content">
+        <h3 class="amenity-title">Sala de Estar</h3>
+        <p>Espacio cómodo y elegante para descansar, socializar o compartir momentos especiales.</p>
+      </div>
+    </div>
+
+  <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/smarttv.png" alt="Smart TV">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Smart TV</h3>
+    <p>Entretenimiento con plataformas de streaming.</p>
+
+    <div class="amenity-info">
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Encender con el control remoto</li>
+        <li>Acceder a Netflix, YouTube, etc.</li>
+        <li>Usar cuentas propias (cerrar sesión al salir)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="amenity-card">
+      <div class="amenity-media">
+        <img src="images/comedor.png" alt="Comedor">
+      </div>
+      <div class="amenity-content">
+        <h3 class="amenity-title">Comedor</h3>
+        <p>Área ideal para compartir comidas en un ambiente cómodo y acogedor.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECCIÓN HABITACIONES -->
+<section id="habitaciones" class="content-section">
+  <div class="section-header">
+    <h2>Habitaciones</h2>
+    <p>Espacios diseñados para su descanso y privacidad</p>
+  </div>
+
+  <div class="amenities-grid">
+
+    <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/habitacion1.png" alt="Habitaciones">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Habitaciones</h3>
+    <p>Espacios diseñados para un descanso cómodo y tranquilo.</p>
+
+    <div class="amenity-info">
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>No fumar dentro de las habitaciones</li>
+        <li>No mover muebles</li>
+        <li>Reportar cualquier daño</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/habitacion2.png" alt="Habitacion secundaria">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Habitacion secundaria</h3>
+    <p>Espacios diseñados para un descanso cómodo y tranquilo.</p>
+
+    <div class="amenity-info">
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>No fumar dentro de las habitaciones</li>
+        <li>No mover muebles</li>
+        <li>Reportar cualquier daño</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="amenity-card">
+      <div class="amenity-media">
+        <img src="images/ropadecama.png" alt="Ropa de Cama">
+      </div>
+      <div class="amenity-content">
+        <h3 class="amenity-title">Ropa de Cama</h3>
+        <p>Sábanas, almohadas y cobertores limpios, de alta calidad y listos para su comodidad.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECCIÓN ÁREA EXTERIOR -->
+<section id="exterior" class="content-section exterior-section">
+  <div class="section-header">
+    <h2>Área Exterior</h2>
+  </div>
+
+ <div class="amenity-card exterior-card">
+
+  <div class="amenity-media">
+    <img src="images/piscina.png" alt="Piscina">
+  </div>
+
+  <div class="amenity-content">
+    <h3 class="amenity-title">Piscina</h3>
+    <p>Área ideal para relajarse y disfrutar en familia o con amigos.</p>
+
+    <div class="amenity-info">
+      <h4>Normas de Uso</h4>
+      <ul>
+        <li>Horario permitido: 8:00 am – 10:00 pm</li>
+        <li>Profundidad máxima: 1.80 metros</li>
+        <li>Ducharse antes de entrar</li>
+        <li>No consumir vidrio cerca de la piscina</li>
+        <li>Toallas disponibles en armario junto al área</li>
+      </ul>
+    </div>
+
+    <div class="amenity-info warning">
+      <h4>Seguridad</h4>
+      <ul>
+        <li>Supervisar niños en todo momento</li>
+        <li>No permitido nadar en estado de embriaguez</li>
+        <li>Equipo de primeros auxilios disponible en caseta</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+ <div class="amenity-card exterior-card">
+
+  <div class="amenity-media">
+    <img src="images/bbq.png" alt="BBQ">
+  </div>
+
+  <div class="amenity-content">
+    <h3 class="amenity-title">Área de BBQ</h3>
+    <p>Parrilla de gas profesional con área de preparación y comedor exterior.</p>
+
+    <div class="amenity-info">
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Encender siguiendo las instrucciones en la parrilla</li>
+        <li>Tanque de gas ubicado debajo</li>
+        <li>Utensilios disponibles en gabinete lateral</li>
+        <li>Limpiar la parrilla después de usar</li>
+        <li>Cerrar válvula de gas al terminar</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- SECCIÓN TECNOLOGÍA -->
+<section id="tecnologia" class="content-section tech-section">
+  <div class="section-header">
+    <h2>Tecnología</h2>
+  </div>
+
+  <div class="amenities-grid tech-grid">
+
+    <div class="amenity-card">
+  <div class="amenity-media">
+    <img src="images/cerradura.png" alt="Cerradura Inteligente">
+  </div>
+  <div class="amenity-content">
+    <h3 class="amenity-title">Cerradura Inteligente</h3>
+    <p>Sistema moderno de acceso sin llaves.</p>
+
+    <div class="amenity-info">
+      <h4>Cómo Usar</h4>
+      <ul>
+        <li>Ingresar el código asignado</li>
+        <li>Esperar confirmación sonora</li>
+        <li>Cerrar puerta correctamente al salir</li>
+      </ul>
+    </div>
+
+    <div class="amenity-info warning">
+      <h4>Seguridad</h4>
+      <ul>
+        <li>No compartir el código</li>
+        <li>Código se desactiva al finalizar la estadía</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="amenity-card tech-card">
+      <div class="amenity-media">
+        <img src="images/seguridad.png" alt="Seguridad">
+      </div>
+      <div class="amenity-content">
+        <h3 class="amenity-title">Seguridad</h3>
+        <p>Sistemas de vigilancia en áreas comunes para mayor tranquilidad.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+</div>
+
+<!-- EMERGENCY -->
+<section class="emergency-section">
+  <div class="container">
+
+  <div class="section-header emergency-header">
+  <h2>Contactos de Emergencia y Soporte</h2>
+  <p>
+    Información importante para su seguridad y asistencia durante su estadía.
+    Utilice estos contactos únicamente según el tipo de situación.
+  </p>
+</div>
+
+    <div class="emergency-grid">
+
+      <!-- CARD 911 -->
+      <div class="emergency-card">
+        <h3>🚨 Emergencias – 911</h3>
+        <p>
+          Para emergencias médicas, incendios, robos, violencia o
+          cualquier situación que ponga en riesgo la vida.
+        </p>
+        <a href="tel:911">Llamar 911</a>
+      </div>
+
+      <!-- CARD SOPORTE -->
+      <div class="emergency-card">
+        <h3>🏠 Soporte Verloft</h3>
+        <p>
+          Para problemas con la propiedad, accesos, amenidades,
+          electricidad, agua o cualquier inconveniente durante su estadía.
+        </p>
+        <a href="tel:+18098755831">Contactar Soporte</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+<p>Administrado por VERLOFT</p>
+</footer>
+
+<script>
+function showSection(id,btn){
+document.querySelectorAll('.content-section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+
+window.scrollTo({top:300,behavior:'smooth'});
+}
+</script>
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>
