@@ -286,6 +286,14 @@ margin-bottom:10px;
   display:block;
 }
 
+.amenity-media video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:0;
+}
+
+
 
 /* CONTENIDO */
 .amenity-content{
@@ -554,7 +562,9 @@ padding:40px 0;
 
    <div class="amenity-card">
   <div class="amenity-media">
-    <img src="images/wifi.png" alt="Wi-Fi de Alta Velocidad">
+    <video controls playsinline>
+    <source src="videos/wifi.mp4" type="video/mp4">
+  </video>
   </div>
   <div class="amenity-content">
     <h3 class="amenity-title">Wi-Fi de Alta Velocidad</h3>
@@ -582,7 +592,9 @@ padding:40px 0;
 
     <div class="amenity-card">
   <div class="amenity-media">
-    <img src="images/aire.png" alt="Aire Acondicionado">
+    <video controls playsinline>
+    <source src="videos/aire.mp4" type="video/mp4"> 
+  </video>
   </div>
   <div class="amenity-content">
     <h3 class="amenity-title">Aire Acondicionado</h3>
@@ -1032,8 +1044,6 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
-<!-- github pages deploy -->
 
 </body>
 </html>
-
