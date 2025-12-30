@@ -163,11 +163,10 @@ text-align:center;
 }
 
 .welcome-section h2{
-font-size:34px;
-font-weight:300;
-color:var(--burgundy-dark);
-margin-bottom:20px;
+  text-transform: uppercase;
+  font-weight: 700; /* bold */
 }
+
 
 .welcome-section p{
 max-width:700px;
@@ -533,7 +532,7 @@ padding:40px 0;
 <!-- WELCOME -->
 <section class="welcome-section">
 <div class="container">
-<h2>Bienvenido a su estadía</h2>
+<h2>BIENVENIDO A SU ESTADÍA</h2>
 <p>Esta guía contiene toda la información para disfrutar la propiedad sin inconvenientes.</p>
 </div>
 </section>
@@ -560,12 +559,19 @@ padding:40px 0;
 
   <div class="amenities-grid">
 
-   <div class="amenity-card">
+<div class="amenity-card">
   <div class="amenity-media">
-    <video controls playsinline>
-    <source src="videos/wifi.mp4" type="video/mp4">
-  </video>
+    <video 
+      controls 
+      playsinline 
+      preload="none"
+      poster="images/wifi.png">
+      
+      <source src="videos/wifi.mp4" type="video/mp4">
+    </video>
   </div>
+</div>
+
   <div class="amenity-content">
     <h3 class="amenity-title">Wi-Fi de Alta Velocidad</h3>
     <p>Conexión estable en toda la propiedad, ideal para trabajo remoto y streaming.</p>
@@ -590,12 +596,19 @@ padding:40px 0;
 </div>
 
 
-    <div class="amenity-card">
+<div class="amenity-card">
   <div class="amenity-media">
-    <video controls playsinline>
-    <source src="videos/aire.mp4" type="video/mp4"> 
-  </video>
+    <video 
+      controls 
+      playsinline 
+      preload="none"
+      poster="images/aire.png">
+      
+      <source src="videos/aire.mp4" type="video/mp4">
+    </video>
   </div>
+</div>
+
   <div class="amenity-content">
     <h3 class="amenity-title">Aire Acondicionado</h3>
     <p>Disponible en todas las áreas para mayor comodidad.</p>
@@ -1044,8 +1057,6 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
-<!-- update videos -->
 
 </body>
 </html>
-
