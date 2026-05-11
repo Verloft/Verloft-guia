@@ -1,1059 +1,977 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía de Propiedad - VERLOFT</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VERLOFT | Villa Lumar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* ===== LOGO VERLOFT ===== */
-.brand-logo{
-  font-family: 'Montserrat', sans-serif;
-  font-size:32px;
-  font-weight:600;
-  letter-spacing:4px;
-  color:var(--gold);
-  text-transform:uppercase;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-  :root{
-  --vino:#5b1b1f;
-  --oro:#c9a24d;
-  --fondo:#faf7f5;
-}
-
-.content-section{
-  padding:40px 20px;
-  animation: fadeIn 0.6s ease;
-}
-
-.section-header h2{
-  color:var(--vino);
-  border-left:5px solid var(--oro);
-  padding-left:15px;
-  margin-bottom:30px;
-}
-
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:white;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-  overflow:hidden;
-  transition:.4s ease;
-  position:relative;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:var(--oro);
-}
-
-.card:hover{
-  transform:translateY(-8px);
-}
-
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:18px;
-}
-
-.card-content h3{
-  color:var(--vino);
-  margin-bottom:8px;
-}
-
-.card-content p{
-  font-size:14px;
-  color:#555;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-  
-/* ===== RESET ===== */
-*{margin:0;padding:0;box-sizing:border-box}
-
-/* ===== VARIABLES ===== */
 :root{
---burgundy:#5a1a1a;
---burgundy-dark:#3d1111;
---gold:#c9a961;
---gold-dark:#a88947;
---white:#fff;
---gray:#f8f7f5;
---text:#2a2a2a;
+--bg:#f5f5f3;
+--white:#ffffff;
+--text:#1f1f1f;
+--muted:#666;
+--gold:#c8a45d;
+--gold-dark:#a78647;
+--burgundy:#5b1b1f;
+--burgundy-dark:#381012;
+--glass:rgba(255,255,255,.12);
+--shadow:0 10px 40px rgba(0,0,0,.10);
+--radius:22px;
 }
 
-/* ===== BASE ===== */
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Montserrat',sans-serif;
-background:var(--gray);
+background:var(--bg);
 color:var(--text);
+overflow-x:hidden;
 }
 
 .container{
-max-width:1200px;
+width:min(1200px,92%);
 margin:auto;
-padding:0 20px;
 }
 
-/* ===== HEADER ===== */
-.header{
-background:linear-gradient(135deg,var(--burgundy-dark),var(--burgundy));
-padding:25px 0;
-position:sticky;
-top:0;
-z-index:100;
+/* HERO */
+.hero{
+position:relative;
+height:100vh;
+overflow:hidden;
 }
 
-.header-content{
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,.65));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+height:100%;
 display:flex;
-justify-content:space-between;
+flex-direction:column;
+justify-content:center;
 align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.brand{
+font-size:20px;
+letter-spacing:6px;
+color:var(--gold);
+margin-bottom:18px;
+font-weight:700;
+}
+
+.hero h1{
+font-size:72px;
+color:white;
+font-weight:800;
+margin-bottom:12px;
+}
+
+.hero p{
+color:rgba(255,255,255,.9);
+font-size:18px;
+max-width:700px;
+line-height:1.6;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
 flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s ease;
+}
+
+.btn-gold{
+background:var(--gold);
+color:var(--burgundy-dark);
+}
+
+.btn-gold:hover{
+background:var(--gold-dark);
+transform:translateY(-3px);
+}
+
+.btn-glass{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+color:white;
+border:1px solid rgba(255,255,255,.2);
+}
+
+.btn-glass:hover{
+background:rgba(255,255,255,.18);
+}
+
+/* FLOATING NAV */
+.nav-wrapper{
+position:sticky;
+top:20px;
+z-index:100;
+padding:20px 0;
+}
+
+.nav{
+width:min(1100px,92%);
+margin:auto;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+padding:12px;
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.4);
+border-radius:999px;
+box-shadow:var(--shadow);
+}
+
+.nav button{
+border:none;
+background:transparent;
+padding:12px 18px;
+border-radius:999px;
+font-family:inherit;
+font-weight:600;
+cursor:pointer;
+transition:.3s ease;
+color:#333;
+}
+
+.nav button:hover,
+.nav button.active{
+background:var(--burgundy);
+color:white;
+}
+
+/* QUICK ACTIONS */
+.quick-actions{
+padding:70px 0 30px;
+}
+
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-.mini-logo{
-width:48px;
-height:48px;
-border:2px solid var(--gold);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
+.quick-card{
+background:white;
+padding:28px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+transition:.35s ease;
+position:relative;
+overflow:hidden;
+}
+
+.quick-card::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:4px;
+background:var(--gold);
+}
+
+.quick-card:hover{
+transform:translateY(-8px);
+}
+
+.quick-card h3{
+margin:15px 0 8px;
+color:var(--burgundy-dark);
+}
+
+.quick-card p{
+font-size:14px;
+color:var(--muted);
+line-height:1.5;
+}
+
+.quick-icon{
+font-size:34px;
+}
+
+/* SECTIONS */
+.section{
+padding:80px 0;
+display:none;
+}
+
+.section.active{
+display:block;
+animation:fade .5s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.section-title{
+text-align:center;
+margin-bottom:55px;
+}
+
+.section-title span{
 color:var(--gold);
+font-size:13px;
+letter-spacing:3px;
+font-weight:700;
+}
+
+.section-title h2{
+font-size:42px;
+margin-top:12px;
+color:var(--burgundy-dark);
+}
+
+.section-title p{
+max-width:700px;
+margin:18px auto 0;
+color:#666;
+line-height:1.7;
+}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:28px;
+}
+
+.card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:.35s ease;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img,
+.card video{
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
+}
+
+.card-content{
+padding:26px;
+}
+
+.card-content h3{
 font-size:24px;
+margin-bottom:12px;
+color:var(--burgundy-dark);
 }
 
-.header-title h1{color:#fff;font-weight:500}
-.header-title p{color:var(--gold);font-size:14px}
-
-.property-name{
-color:#fff;
-padding:8px 15px;
-border-left:3px solid var(--gold);
+.card-content p{
+line-height:1.7;
+font-size:15px;
+color:#555;
 }
 
-/* ===== WELCOME ===== */
-.welcome-section{
-background:#fff;
-padding:60px 0;
+.info-box{
+margin-top:20px;
+padding:18px;
+background:#faf8f4;
+border-radius:18px;
+}
+
+.info-box h4{
+margin-bottom:10px;
+color:var(--burgundy-dark);
+font-size:14px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.info-box ul{
+padding-left:18px;
+}
+
+.info-box li{
+margin-bottom:8px;
+font-size:14px;
+line-height:1.6;
+color:#555;
+}
+
+.warning{
+background:#fff3f3;
+border-left:4px solid #d9534f;
+}
+
+/* CONCIERGE */
+.concierge{
+background:linear-gradient(135deg,var(--burgundy-dark),var(--burgundy));
+padding:100px 0;
+color:white;
+}
+
+.concierge-box{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(14px);
+padding:50px;
+border-radius:32px;
 text-align:center;
 }
 
-.welcome-section h2{
-  text-transform: uppercase;
-  font-weight: 700; /* bold */
+.concierge-box h2{
+font-size:44px;
+margin-bottom:20px;
 }
 
-
-.welcome-section p{
+.concierge-box p{
 max-width:700px;
 margin:auto;
-color:#666;
-font-size:17px;
+line-height:1.8;
+color:rgba(255,255,255,.88);
 }
 
-/* ===== NAV ===== */
-.nav-tabs{
-  background:#fff;
-  position:sticky;
-  top:100px;
-  z-index:90;
-  box-shadow:0 2px 8px rgba(0,0,0,.05);
+.concierge-actions{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
-.nav-tabs-container{
-  display:flex;
-  overflow-x:auto;
-}
-
-.nav-tab{
-  flex:1;
-  min-width:150px;
-  padding:18px;
-  border:none;
-  background:none;
-  cursor:pointer;
-  font-weight:500;
-
-  /* 🔑 AQUÍ ESTÁ LA CLAVE */
-  color:#000;                 /* negro */
-  border-bottom:3px solid transparent;
-  transition:.3s ease;
-}
-
-/* Hover */
-.nav-tab:hover{
-  color:var(--gold);
-}
-
-/* Activo */
-.nav-tab.active{
-  border-bottom-color:var(--gold);
-  color:var(--burgundy-dark);
-  background:var(--gray);
-  font-weight:600;
-}
-
-
-/* ===== SECTIONS ===== */
-.content-section{
-display:none;
-padding:60px 0;
-}
-
-.content-section.active{display:block}
-
-.section-header{
-text-align:center;
-margin-bottom:40px;
-}
-
-.section-header h2{
+.concierge-btn{
+background:white;
 color:var(--burgundy-dark);
-margin-bottom:10px;
+padding:22px;
+border-radius:22px;
+text-decoration:none;
+font-weight:700;
+transition:.3s ease;
 }
 
-/* ===== CARDS ===== */
-.amenities-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+.concierge-btn:hover{
+transform:translateY(-5px);
 }
 
-.amenity-card{
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-  transition:.35s ease;
-  position:relative;
-}
-
-/* línea dorada VERLOFT */
-.amenity-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:var(--gold);
-}
-
-.amenity-card:hover{
-  transform:translateY(-6px);
-}
-
-/* CONTENEDOR DE IMAGEN */
-.amenity-media{
-  width:100%;
-  height:260px;           /* 🔥 tamaño visual grande */
-  margin:0;
-  overflow:hidden;
-}
-
-
-
-/* IMAGEN SIN RECORTE */
-.amenity-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;       /* 🔥 CLAVE */
-  display:block;
-}
-
-.amenity-media video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:0;
-}
-
-
-
-/* CONTENIDO */
-.amenity-content{
-  padding:18px 20px 22px;
-}
-
-.amenity-title{
-  font-size:18px;
-  color:var(--burgundy-dark);
-  margin-bottom:8px;
-}
-
-.amenity-content p{
-  font-size:14px;
-  color:#555;
-  line-height:1.4;
-}
-
-/* ===== INFO INTERNA DE AMENIDADES ===== */
-.amenity-info{
-  margin-top:15px;
-  padding:14px 16px;
-  background:#f8f9fb;
-  border-radius:12px;
-}
-
-.amenity-info h4{
-  font-size:15px;
-  color:var(--burgundy-dark);
-  margin-bottom:8px;
-}
-
-.amenity-info ul{
-  padding-left:18px;
-}
-
-.amenity-info li{
-  font-size:13px;
-  color:#555;
-  margin-bottom:6px;
-  line-height:1.4;
-}
-
-/* Bloque de seguridad */
-.amenity-info.warning{
-  background:#fff3f3;
-  border-left:4px solid #d9534f;
-}
-
-/* ===== ESTUFA & HORNO ===== */
-
-/* Ajuste fino del contenido */
-.amenity-card .amenity-content{
-  padding:20px;
-}
-
-/* Subtítulos (Normas, Cómo usar, Seguridad) */
-.amenity-rules h4{
-  font-size:14px;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  margin:14px 0 6px;
-  color:var(--burgundy-dark);
-}
-
-/* Listas */
-.amenity-rules ul{
-  padding-left:16px;
-  margin:0 0 8px;
-}
-
-.amenity-rules li{
-  font-size:13px;
-  color:#555;
-  line-height:1.4;
-  margin-bottom:5px;
-}
-
-/* Separación visual */
-.amenity-rules h4:not(:first-child){
-  border-top:1px solid rgba(0,0,0,.08);
-  padding-top:10px;
-  margin-top:12px;
-}
-
-
-
-/* ===== EMERGENCY MEJORADO ===== */
-.emergency-card{
-  background:rgba(255,255,255,.06);
-  padding:35px 30px;
-  text-align:left; /* 🔑 clave */
-  border-top:4px solid var(--gold);
-  position:relative;
-}
-
-.emergency-icon{
-  font-size:40px;
-  margin-bottom:15px;
-}
-
-.emergency-card h3{
-  font-size:20px;
-  font-weight:600;
-  color:var(--gold);
-  margin-bottom:10px;
-}
-
-.emergency-card p{
-  font-size:14px;
-  line-height:1.6;
-  color:rgba(255,255,255,.9);
-  margin-bottom:15px;
-}
-
-/* LISTA DE USOS */
-.emergency-card ul{
-  list-style:none;
-  padding:0;
-  margin:15px 0;
-}
-
-.emergency-card ul li{
-  font-size:14px;
-  margin-bottom:8px;
-  line-height:1.5;
-  color:rgba(255,255,255,.9);
-  padding-left:16px;
-  position:relative;
-}
-
-.emergency-card ul li::before{
-  content:"•";
-  position:absolute;
-  left:0;
-  color:var(--gold);
-  font-weight:700;
-}
-
-/* NOTA IMPORTANTE */
-.emergency-note{
-  font-size:13px;
-  color:rgba(255,255,255,.7);
-  margin-top:15px;
-  font-style:italic;
-}
-
-/* BOTÓN */
-.emergency-card a{
-  display:inline-block;
-  margin-top:18px;
-  background:var(--gold);
-  color:var(--burgundy-dark);
-  padding:12px 22px;
-  text-decoration:none;
-  font-weight:600;
-  border-radius:2px;
-  transition:.3s ease;
-}
-
-.emergency-card a:hover{
-  background:var(--gold-dark);
-}
-
-.emergency-section{
-background:var(--burgundy-dark);
-color:#fff;
-padding:70px 0;
+/* EMERGENCY */
+.emergency{
+padding:100px 0;
 }
 
 .emergency-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:28px;
 }
 
 .emergency-card{
-background:rgba(255,255,255,.05);
-padding:30px;
-text-align:center;
-border-top:3px solid var(--gold);
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:var(--shadow);
+position:relative;
+overflow:hidden;
 }
 
-.emergency-card a{
-display:inline-block;
-margin-top:10px;
+.emergency-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
 background:var(--gold);
+}
+
+.emergency-card h3{
+font-size:28px;
+margin-bottom:15px;
 color:var(--burgundy-dark);
-padding:10px 20px;
+}
+
+.emergency-card p{
+line-height:1.7;
+color:#555;
+margin-bottom:25px;
+}
+
+.call-btn{
+display:inline-block;
+padding:14px 24px;
+background:var(--burgundy);
+color:white;
 text-decoration:none;
+border-radius:999px;
 font-weight:600;
+transition:.3s ease;
 }
 
-.emergency-header h2{
-  color:#fff;
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.emergency-header p{
-  color:rgba(255,255,255,.85);
-  max-width:700px;
-  margin:0 auto 40px;
-  font-size:16px;
-  line-height:1.6;
-}
-
-/* ===== FOOTER ===== */
-.footer{
+.call-btn:hover{
 background:var(--burgundy-dark);
-color:#ccc;
+}
+
+/* FOOTER */
+.footer{
+background:#150707;
+color:#aaa;
 text-align:center;
-padding:40px 0;
+padding:50px 20px;
+}
+
+.footer .logo{
+font-size:22px;
+letter-spacing:5px;
+color:var(--gold);
+margin-bottom:12px;
+font-weight:700;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+background:#25D366;
+color:white;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+z-index:999;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{
+font-size:48px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+.concierge-box{
+padding:35px 25px;
+}
+
+.concierge-box h2{
+font-size:34px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-<div class="container header-content">
-<div style="display:flex;gap:15px;align-items:center">
-<div class="header-title">
-<div class="brand-logo">
-  VERLOFT
-</div>
+<!-- HERO -->
+<section class="hero">
 
-<p>Guía de Propiedad</p>
-</div>
-</div>
-<div class="property-name">Villa Paraíso</div>
-</div>
-</div>
+<video autoplay muted loop playsinline>
+<source src="videos/hero.mp4" type="video/mp4">
+</video>
 
-<!-- WELCOME -->
-<section class="welcome-section">
-<div class="container">
-<h2>BIENVENIDO A SU ESTADÍA</h2>
-<p>Esta guía contiene toda la información para disfrutar la propiedad sin inconvenientes.</p>
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<div class="brand">VERLOFT</div>
+<h1>Villa Lumar</h1>
+<p>
+Bienvenido a una experiencia premium diseñada para su comodidad,
+relajación y tranquilidad durante toda su estadía.
+</p>
+
+<div class="hero-buttons">
+<a href="#guide" class="btn btn-gold">Explorar Guía</a>
+<a href="https://wa.me/18094995831" class="btn btn-glass">Contactar Asistencia</a>
+</div>
 </div>
 </section>
 
 <!-- NAV -->
-<div class="nav-tabs">
-<div class="container nav-tabs-container">
-<button class="nav-tab active" onclick="showSection('general',this)">General</button>
-<button class="nav-tab" onclick="showSection('cocina',this)">Cocina</button>
-<button class="nav-tab" onclick="showSection('areas',this)">Áreas Comunes</button>
-<button class="nav-tab" onclick="showSection('habitaciones',this)">Habitaciones</button>
-<button class="nav-tab" onclick="showSection('exterior',this)">Exterior</button>
-<button class="nav-tab" onclick="showSection('tecnologia',this)">Tecnología</button>
+<div class="nav-wrapper" id="guide">
+<div class="nav">
+<button class="active" onclick="showSection('general',this)">General</button>
+<button onclick="showSection('cocina',this)">Cocina</button>
+<button onclick="showSection('habitaciones',this)">Habitaciones</button>
+<button onclick="showSection('exterior',this)">Exterior</button>
+<button onclick="showSection('tecnologia',this)">Tecnología</button>
+<button onclick="showSection('emergencia',this)">Soporte</button>
 </div>
 </div>
 
+<!-- QUICK ACTIONS -->
+<section class="quick-actions">
+<div class="container">
+<div class="quick-grid">
+
+<div class="quick-card">
+<div class="quick-icon">📶</div>
+<h3>Wi‑Fi Premium</h3>
+<p>
+Conectividad estable de alta velocidad ideal para streaming y trabajo remoto.
+</p>
+</div>
+
+<div class="quick-card">
+<div class="quick-icon">🕒</div>
+<h3>Check‑out</h3>
+<p>
+Hora de salida: 11:00 AM.
+Contáctenos para late checkout sujeto a disponibilidad.
+</p>
+</div>
+
+<div class="quick-card">
+<div class="quick-icon">🔐</div>
+<h3>Acceso Inteligente</h3>
+<p>
+Entrada autónoma mediante cerradura digital con código privado.
+</p>
+</div>
+
+<div class="quick-card">
+<div class="quick-icon">🏝️</div>
+<h3>Experiencia VERLOFT</h3>
+<p>
+Diseñada para ofrecer una estadía moderna, elegante y sin complicaciones.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- GENERAL -->
+<section class="section active" id="general">
 <div class="container">
 
-<!-- SECCIÓN GENERAL -->
-<section id="general" class="content-section active">
-  <div class="section-header">
-    <h2>Información General</h2>
-  </div>
+<div class="section-title">
+<span>INFORMACIÓN GENERAL</span>
+<h2>Todo lo esencial para su estadía</h2>
+<p>
+Acceda rápidamente a la información más importante de la propiedad.
+</p>
+</div>
 
-  <div class="amenities-grid">
+<div class="grid">
 
-   <div class="amenity-card">
-  <div class="amenity-media">
-  <video 
-  controls 
-  playsinline
-  preload="metadata"
-  poster="images/wifi.png">
-  <source src="videos/wifi.mp4" type="video/mp4">
+<div class="card">
+<video controls playsinline poster="images/wifi.png">
+<source src="videos/wifi.mp4" type="video/mp4">
 </video>
 
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Wi-Fi de Alta Velocidad</h3>
-    <p>Conexión estable en toda la propiedad, ideal para trabajo remoto y streaming.</p>
+<div class="card-content">
+<h3>Wi‑Fi de Alta Velocidad</h3>
+<p>
+Conexión estable disponible en toda la propiedad para videollamadas,
+streaming y navegación.
+</p>
 
-    <div class="amenity-info">
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Nombre de red (SSID) y contraseña disponibles en la guía impresa</li>
-        <li>Conecte hasta varios dispositivos sin límite</li>
-        <li>Recomendado para videollamadas y streaming</li>
-      </ul>
-    </div>
-
-    <div class="amenity-info warning">
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>No reiniciar el router</li>
-        <li>No modificar configuraciones de red</li>
-      </ul>
-    </div>
-  </div>
+<div class="info-box">
+<h4>Información</h4>
+<ul>
+<li>SSID: VERLOFT_GUEST</li>
+<li>Contraseña: verloft2026</li>
+<li>No reiniciar el router</li>
+</ul>
+</div>
+</div>
 </div>
 
-
-    <div class="amenity-card">
-  <div class="amenity-media">
-  <video 
-  controls 
-  playsinline 
-  preload="metadata"
-  poster="images/aire.png">
-  <source src="videos/aire.mp4" type="video/mp4"> 
+<div class="card">
+<video controls playsinline poster="images/aire.png">
+<source src="videos/aire.mp4" type="video/mp4">
 </video>
 
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Aire Acondicionado</h3>
-    <p>Disponible en todas las áreas para mayor comodidad.</p>
+<div class="card-content">
+<h3>Aire Acondicionado</h3>
+<p>
+Para una mejor experiencia y eficiencia energética recomendamos
+mantener la temperatura entre 22° y 24°.
+</p>
 
-    <div class="amenity-info">
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Encender con el control remoto asignado</li>
-        <li>Temperatura recomendada: 22–24 °C</li>
-        <li>Usar modo “Cool”</li>
-      </ul>
-    </div>
-
-    <div class="amenity-info warning">
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>Apagar al salir del alojamiento</li>
-        <li>No dejar puertas o ventanas abiertas</li>
-      </ul>
-    </div>
-  </div>
+<div class="info-box warning">
+<h4>Uso Responsable</h4>
+<ul>
+<li>Apagar al salir de la propiedad</li>
+<li>Mantener puertas cerradas</li>
+<li>No modificar configuraciones avanzadas</li>
+</ul>
+</div>
+</div>
 </div>
 
-
-    <div class="amenity-card">
-      <div class="amenity-media">
-        <img src="images/estacionamiento.png" alt="Estacionamiento">
-      </div>
-      <div class="amenity-content">
-        <h3 class="amenity-title">Estacionamiento</h3>
-        <p>Espacio de parqueo privado y seguro dentro de la propiedad.</p>
-      </div>
-    </div>
-
-    <div class="amenity-card">
-      <div class="amenity-media">
-        <img src="images/checkin.png" alt="Check-in / Check-out">
-      </div>
-      <div class="amenity-content">
-        <h3 class="amenity-title">Check-in / Check-out</h3>
-        <p>Check-in: 3:00 PM · Check-out: 11:00 AM. Horarios flexibles sujetos a disponibilidad.</p>
-      </div>
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
 
+<!-- COCINA -->
+<section class="section" id="cocina">
+<div class="container">
 
-<!-- SECCIÓN COCINA -->
-<section id="cocina" class="content-section">
-  <div class="section-header">
-    <h2>Cocina</h2>
-    <p>Totalmente equipada para su comodidad</p>
-  </div>
-
-  <div class="amenities-grid">
-
-   <div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/refrigerador.png" alt="Refrigerador">
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Refrigerador</h3>
-    <p>Espacio amplio para alimentos y bebidas.</p>
-
-    <div class="amenity-info">
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>No introducir alimentos calientes</li>
-        <li>Mantener bien cerrada la puerta</li>
-        <li>Desechar alimentos al finalizar la estadía</li>
-      </ul>
-    </div>
-  </div>
+<div class="section-title">
+<span>COCINA</span>
+<h2>Totalmente equipada</h2>
+<p>
+Todo lo necesario para preparar y disfrutar sus comidas cómodamente.
+</p>
 </div>
 
+<div class="grid">
 
-<div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/estufa.png" alt="Estufa y Horno">
-  </div>
+<div class="card">
+<img src="images/estufa.png" alt="Estufa">
 
-  <div class="amenity-content">
-    <h3 class="amenity-title">Estufa y Horno</h3>
-    <p>
-      Equipos completamente funcionales para preparar desde comidas rápidas
-      hasta platos completos.
-    </p>
+<div class="card-content">
+<h3>Estufa y Horno</h3>
+<p>
+Equipos modernos listos para preparar desde comidas rápidas
+hasta cenas completas.
+</p>
 
-    <div class="amenity-rules">
-
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>No dejar la estufa encendida sin supervisión.</li>
-        <li>Uso exclusivo para huéspedes registrados.</li>
-        <li>No utilizar utensilios plásticos sobre las hornillas.</li>
-        <li>Mantener el área limpia y seca.</li>
-      </ul>
-
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Gire la perilla para encender la hornilla.</li>
-        <li>Ajuste la intensidad del fuego según necesidad.</li>
-        <li>Para el horno, seleccione temperatura y tiempo.</li>
-        <li>Apague completamente al finalizar.</li>
-      </ul>
-
-      <h4>Seguridad</h4>
-      <ul>
-        <li>No permitir uso por niños sin supervisión.</li>
-        <li>Si detecta olor a gas, apague y ventile.</li>
-        <li>Extintor disponible en la cocina.</li>
-      </ul>
-
-    </div>
-  </div>
+<div class="info-box">
+<h4>Cómo usar</h4>
+<ul>
+<li>Verifique que el gas esté abierto</li>
+<li>No dejar encendido sin supervisión</li>
+<li>Apagar completamente al finalizar</li>
+</ul>
 </div>
 
-
-<div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/cafetera.png" alt="Cafetera">
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Cafetera</h3>
-    <p>Perfecta para disfrutar café recién hecho.</p>
-
-    <div class="amenity-info">
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Llenar depósito con agua</li>
-        <li>Colocar café molido o cápsula</li>
-        <li>Presionar botón de encendido</li>
-        <li>Apagar después de usar</li>
-      </ul>
-    </div>
-  </div>
+<div class="info-box warning">
+<h4>Seguridad</h4>
+<ul>
+<li>Si detecta olor a gas, cierre válvula y contacte soporte</li>
+<li>No permitir uso por niños sin supervisión</li>
+</ul>
+</div>
+</div>
 </div>
 
+<div class="card">
+<img src="images/cafetera.png" alt="Cafetera">
 
-  </div>
+<div class="card-content">
+<h3>Cafetera</h3>
+<p>
+Disfrute café recién preparado durante toda su estadía.
+</p>
+
+<div class="info-box">
+<h4>Uso</h4>
+<ul>
+<li>Llenar depósito de agua</li>
+<li>Agregar café molido o cápsula</li>
+<li>Apagar luego de utilizar</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
+<!-- HABITACIONES -->
+<section class="section" id="habitaciones">
+<div class="container">
 
-<!-- SECCIÓN ÁREAS COMUNES -->
-<section id="areas" class="content-section">
-  <div class="section-header">
-    <h2>Áreas Comunes</h2>
-    <p>Espacios diseñados para su confort y convivencia</p>
-  </div>
-
-  <div class="amenities-grid">
-
-    <div class="amenity-card">
-      <div class="amenity-media">
-        <img src="images/sala.png" alt="Sala de Estar">
-      </div>
-      <div class="amenity-content">
-        <h3 class="amenity-title">Sala de Estar</h3>
-        <p>Espacio cómodo y elegante para descansar, socializar o compartir momentos especiales.</p>
-      </div>
-    </div>
-
-  <div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/smarttv.png" alt="Smart TV">
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Smart TV</h3>
-    <p>Entretenimiento con plataformas de streaming.</p>
-
-    <div class="amenity-info">
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Encender con el control remoto</li>
-        <li>Acceder a Netflix, YouTube, etc.</li>
-        <li>Usar cuentas propias (cerrar sesión al salir)</li>
-      </ul>
-    </div>
-  </div>
+<div class="section-title">
+<span>DESCANSO</span>
+<h2>Habitaciones premium</h2>
+<p>
+Espacios diseñados para brindar privacidad, confort y tranquilidad.
+</p>
 </div>
 
-    <div class="amenity-card">
-      <div class="amenity-media">
-        <img src="images/comedor.png" alt="Comedor">
-      </div>
-      <div class="amenity-content">
-        <h3 class="amenity-title">Comedor</h3>
-        <p>Área ideal para compartir comidas en un ambiente cómodo y acogedor.</p>
-      </div>
-    </div>
+<div class="grid">
 
-  </div>
+<div class="card">
+<img src="images/habitacion1.png" alt="Habitación Principal">
+
+<div class="card-content">
+<h3>Suite Principal</h3>
+<p>
+Habitación elegante equipada para ofrecer un descanso cómodo y relajante.
+</p>
+
+<div class="info-box">
+<h4>Normas</h4>
+<ul>
+<li>No fumar dentro de la habitación</li>
+<li>No mover mobiliario</li>
+<li>Reportar daños inmediatamente</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="images/ropadecama.png" alt="Ropa de cama">
+
+<div class="card-content">
+<h3>Ropa de Cama Premium</h3>
+<p>
+Sábanas y almohadas de alta calidad preparadas para su comodidad.
+</p>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
+<!-- EXTERIOR -->
+<section class="section" id="exterior">
+<div class="container">
 
-<!-- SECCIÓN HABITACIONES -->
-<section id="habitaciones" class="content-section">
-  <div class="section-header">
-    <h2>Habitaciones</h2>
-    <p>Espacios diseñados para su descanso y privacidad</p>
-  </div>
-
-  <div class="amenities-grid">
-
-    <div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/habitacion1.png" alt="Habitaciones">
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Habitaciones</h3>
-    <p>Espacios diseñados para un descanso cómodo y tranquilo.</p>
-
-    <div class="amenity-info">
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>No fumar dentro de las habitaciones</li>
-        <li>No mover muebles</li>
-        <li>Reportar cualquier daño</li>
-      </ul>
-    </div>
-  </div>
+<div class="section-title">
+<span>EXTERIOR</span>
+<h2>Espacios para disfrutar</h2>
+<p>
+Áreas creadas para relajarse y compartir momentos especiales.
+</p>
 </div>
 
+<div class="grid">
 
-  <div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/habitacion2.png" alt="Habitacion secundaria">
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Habitacion secundaria</h3>
-    <p>Espacios diseñados para un descanso cómodo y tranquilo.</p>
+<div class="card">
+<img src="images/piscina.png" alt="Piscina">
 
-    <div class="amenity-info">
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>No fumar dentro de las habitaciones</li>
-        <li>No mover muebles</li>
-        <li>Reportar cualquier daño</li>
-      </ul>
-    </div>
-  </div>
+<div class="card-content">
+<h3>Piscina Privada</h3>
+<p>
+Disfrute un ambiente relajante diseñado para complementar su experiencia.
+</p>
+
+<div class="info-box">
+<h4>Horario</h4>
+<ul>
+<li>8:00 AM – 10:00 PM</li>
+<li>No utilizar vidrio cerca de la piscina</li>
+<li>Toallas disponibles</li>
+</ul>
 </div>
 
+<div class="info-box warning">
+<h4>Seguridad</h4>
+<ul>
+<li>Supervisar niños en todo momento</li>
+<li>No nadar bajo efectos del alcohol</li>
+</ul>
+</div>
+</div>
+</div>
 
-    <div class="amenity-card">
-      <div class="amenity-media">
-        <img src="images/ropadecama.png" alt="Ropa de Cama">
-      </div>
-      <div class="amenity-content">
-        <h3 class="amenity-title">Ropa de Cama</h3>
-        <p>Sábanas, almohadas y cobertores limpios, de alta calidad y listos para su comodidad.</p>
-      </div>
-    </div>
+<div class="card">
+<img src="images/bbq.png" alt="BBQ">
 
-  </div>
+<div class="card-content">
+<h3>Área BBQ</h3>
+<p>
+Parrilla profesional ideal para reuniones y comidas al aire libre.
+</p>
+
+<div class="info-box">
+<h4>Uso</h4>
+<ul>
+<li>Limpiar luego de utilizar</li>
+<li>Cerrar válvula de gas al terminar</li>
+<li>Utensilios disponibles</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
+<!-- TECNOLOGÍA -->
+<section class="section" id="tecnologia">
+<div class="container">
 
-<!-- SECCIÓN ÁREA EXTERIOR -->
-<section id="exterior" class="content-section exterior-section">
-  <div class="section-header">
-    <h2>Área Exterior</h2>
-  </div>
-
- <div class="amenity-card exterior-card">
-
-  <div class="amenity-media">
-    <img src="images/piscina.png" alt="Piscina">
-  </div>
-
-  <div class="amenity-content">
-    <h3 class="amenity-title">Piscina</h3>
-    <p>Área ideal para relajarse y disfrutar en familia o con amigos.</p>
-
-    <div class="amenity-info">
-      <h4>Normas de Uso</h4>
-      <ul>
-        <li>Horario permitido: 8:00 am – 10:00 pm</li>
-        <li>Profundidad máxima: 1.80 metros</li>
-        <li>Ducharse antes de entrar</li>
-        <li>No consumir vidrio cerca de la piscina</li>
-        <li>Toallas disponibles en armario junto al área</li>
-      </ul>
-    </div>
-
-    <div class="amenity-info warning">
-      <h4>Seguridad</h4>
-      <ul>
-        <li>Supervisar niños en todo momento</li>
-        <li>No permitido nadar en estado de embriaguez</li>
-        <li>Equipo de primeros auxilios disponible en caseta</li>
-      </ul>
-    </div>
-
-  </div>
+<div class="section-title">
+<span>TECNOLOGÍA</span>
+<h2>Experiencia moderna</h2>
+<p>
+Sistemas diseñados para brindar comodidad y seguridad.
+</p>
 </div>
 
+<div class="grid">
 
- <div class="amenity-card exterior-card">
+<div class="card">
+<img src="images/cerradura.png" alt="Cerradura">
 
-  <div class="amenity-media">
-    <img src="images/bbq.png" alt="BBQ">
-  </div>
+<div class="card-content">
+<h3>Cerradura Inteligente</h3>
+<p>
+Acceso seguro y autónomo mediante código privado.
+</p>
 
-  <div class="amenity-content">
-    <h3 class="amenity-title">Área de BBQ</h3>
-    <p>Parrilla de gas profesional con área de preparación y comedor exterior.</p>
-
-    <div class="amenity-info">
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Encender siguiendo las instrucciones en la parrilla</li>
-        <li>Tanque de gas ubicado debajo</li>
-        <li>Utensilios disponibles en gabinete lateral</li>
-        <li>Limpiar la parrilla después de usar</li>
-        <li>Cerrar válvula de gas al terminar</li>
-      </ul>
-    </div>
-
-  </div>
+<div class="info-box">
+<h4>Acceso</h4>
+<ul>
+<li>Ingresar código asignado</li>
+<li>Esperar confirmación sonora</li>
+<li>El código expira automáticamente al finalizar la estadía</li>
+</ul>
+</div>
+</div>
 </div>
 
+<div class="card">
+<img src="images/seguridad.png" alt="Seguridad">
+
+<div class="card-content">
+<h3>Seguridad</h3>
+<p>
+Sistema de vigilancia en áreas comunes para mayor tranquilidad.
+</p>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
+<!-- CONCIERGE -->
+<section class="concierge">
+<div class="container">
 
+<div class="concierge-box">
+<h2>Asistencia VERLOFT</h2>
+<p>
+Nuestro equipo está disponible para ayudarle durante toda su estadía.
+Solicite asistencia, transporte, limpieza adicional o recomendaciones locales.
+</p>
 
-<!-- SECCIÓN TECNOLOGÍA -->
-<section id="tecnologia" class="content-section tech-section">
-  <div class="section-header">
-    <h2>Tecnología</h2>
-  </div>
-
-  <div class="amenities-grid tech-grid">
-
-    <div class="amenity-card">
-  <div class="amenity-media">
-    <img src="images/cerradura.png" alt="Cerradura Inteligente">
-  </div>
-  <div class="amenity-content">
-    <h3 class="amenity-title">Cerradura Inteligente</h3>
-    <p>Sistema moderno de acceso sin llaves.</p>
-
-    <div class="amenity-info">
-      <h4>Cómo Usar</h4>
-      <ul>
-        <li>Ingresar el código asignado</li>
-        <li>Esperar confirmación sonora</li>
-        <li>Cerrar puerta correctamente al salir</li>
-      </ul>
-    </div>
-
-    <div class="amenity-info warning">
-      <h4>Seguridad</h4>
-      <ul>
-        <li>No compartir el código</li>
-        <li>Código se desactiva al finalizar la estadía</li>
-      </ul>
-    </div>
-  </div>
+<div class="concierge-actions">
+<a href="https://wa.me/18094995831" class="concierge-btn">🧹 Limpieza Extra</a>
+<a href="https://wa.me/18094995831" class="concierge-btn">🛎️ Soporte General</a>
 </div>
 
-
-    <div class="amenity-card tech-card">
-      <div class="amenity-media">
-        <img src="images/seguridad.png" alt="Seguridad">
-      </div>
-      <div class="amenity-content">
-        <h3 class="amenity-title">Seguridad</h3>
-        <p>Sistemas de vigilancia en áreas comunes para mayor tranquilidad.</p>
-      </div>
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
 
+<!-- EMERGENCIA -->
+<section class="emergency section" id="emergencia">
+<div class="container">
 
-
-
+<div class="section-title">
+<span>SOPORTE Y EMERGENCIA</span>
+<h2>Estamos para ayudarle</h2>
+<p>
+Contactos importantes para asistencia inmediata durante su estadía.
+</p>
 </div>
 
-<!-- EMERGENCY -->
-<section class="emergency-section">
-  <div class="container">
+<div class="emergency-grid">
 
-  <div class="section-header emergency-header">
-  <h2>Contactos de Emergencia y Soporte</h2>
-  <p>
-    Información importante para su seguridad y asistencia durante su estadía.
-    Utilice estos contactos únicamente según el tipo de situación.
-  </p>
+<div class="emergency-card">
+<h3>🚨 Emergencias</h3>
+<p>
+Para situaciones médicas, incendios o cualquier riesgo inmediato.
+</p>
+<a href="tel:911" class="call-btn">Llamar 911</a>
 </div>
 
-    <div class="emergency-grid">
+<div class="emergency-card">
+<h3>🏠 Soporte VERLOFT</h3>
+<p>
+Asistencia para accesos, electricidad, agua, internet o cualquier inconveniente.
+</p>
+<a href="tel:+18094995831" class="call-btn">Contactar Soporte</a>
+</div>
 
-      <!-- CARD 911 -->
-      <div class="emergency-card">
-        <h3>🚨 Emergencias – 911</h3>
-        <p>
-          Para emergencias médicas, incendios, robos, violencia o
-          cualquier situación que ponga en riesgo la vida.
-        </p>
-        <a href="tel:911">Llamar 911</a>
-      </div>
-
-      <!-- CARD SOPORTE -->
-      <div class="emergency-card">
-        <h3>🏠 Soporte Verloft</h3>
-        <p>
-          Para problemas con la propiedad, accesos, amenidades,
-          electricidad, agua o cualquier inconveniente durante su estadía.
-        </p>
-        <a href="tel:+18098755831">Contactar Soporte</a>
-      </div>
-
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
 
-
+<!-- FOOTER -->
 <footer class="footer">
-<p>Administrado por VERLOFT</p>
+<div class="logo">VERLOFT</div>
+<p>Luxury Property Experience</p>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/18094995831" class="whatsapp">💬</a>
+
 <script>
-function showSection(id,btn){
-document.querySelectorAll('.content-section').forEach(s=>s.classList.remove('active'));
+function showSection(id,button){
+
+document.querySelectorAll('.section').forEach(section=>{
+section.classList.remove('active');
+});
+
 document.getElementById(id).classList.add('active');
 
-document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
+document.querySelectorAll('.nav button').forEach(btn=>{
+btn.classList.remove('active');
+});
 
-window.scrollTo({top:300,behavior:'smooth'});
+button.classList.add('active');
+
+window.scrollTo({
+top:document.getElementById(id).offsetTop - 120,
+behavior:'smooth'
+});
 }
 </script>
-<script>
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-
-<!-- update -->
 
 </body>
 </html>
