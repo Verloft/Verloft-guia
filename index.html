@@ -7,9 +7,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -25,7 +27,6 @@ box-sizing:border-box;
 --gold-dark:#a78647;
 --burgundy:#5b1b1f;
 --burgundy-dark:#381012;
---glass:rgba(255,255,255,.12);
 --shadow:0 10px 40px rgba(0,0,0,.10);
 --radius:22px;
 }
@@ -39,6 +40,7 @@ font-family:'Montserrat',sans-serif;
 background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
+top:0 !important;
 }
 
 .container{
@@ -46,7 +48,51 @@ width:min(1200px,92%);
 margin:auto;
 }
 
+/* GOOGLE TRANSLATE */
+
+#google_translate_element{
+display:none;
+}
+
+.goog-te-banner-frame{
+display:none !important;
+}
+
+.goog-logo-link,
+.goog-te-gadget span{
+display:none !important;
+}
+
+.goog-te-gadget{
+font-size:0;
+}
+
+.language-switcher{
+position:fixed;
+top:20px;
+right:20px;
+z-index:9999;
+display:flex;
+gap:10px;
+}
+
+.language-switcher button{
+border:none;
+padding:10px 14px;
+border-radius:999px;
+background:white;
+cursor:pointer;
+font-weight:700;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+transition:.3s ease;
+}
+
+.language-switcher button:hover{
+transform:translateY(-2px);
+}
+
 /* HERO */
+
 .hero{
 position:relative;
 height:100vh;
@@ -137,7 +183,8 @@ border:1px solid rgba(255,255,255,.2);
 background:rgba(255,255,255,.18);
 }
 
-/* FLOATING NAV */
+/* NAV */
+
 .nav-wrapper{
 position:sticky;
 top:20px;
@@ -178,7 +225,8 @@ background:var(--burgundy);
 color:white;
 }
 
-/* QUICK ACTIONS */
+/* QUICK */
+
 .quick-actions{
 padding:70px 0 30px;
 }
@@ -228,7 +276,8 @@ line-height:1.5;
 font-size:34px;
 }
 
-/* SECTIONS */
+/* SECTION */
+
 .section{
 padding:80px 0;
 display:none;
@@ -244,7 +293,6 @@ from{
 opacity:0;
 transform:translateY(15px);
 }
-
 to{
 opacity:1;
 transform:translateY(0);
@@ -277,6 +325,7 @@ line-height:1.7;
 }
 
 /* CARDS */
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -289,7 +338,6 @@ border-radius:28px;
 overflow:hidden;
 box-shadow:var(--shadow);
 transition:.35s ease;
-position:relative;
 }
 
 .card:hover{
@@ -352,6 +400,7 @@ border-left:4px solid #d9534f;
 }
 
 /* CONCIERGE */
+
 .concierge{
 background:linear-gradient(135deg,var(--burgundy-dark),var(--burgundy));
 padding:100px 0;
@@ -360,8 +409,6 @@ color:white;
 
 .concierge-box{
 background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.12);
-backdrop-filter:blur(14px);
 padding:50px;
 border-radius:32px;
 text-align:center;
@@ -401,6 +448,7 @@ transform:translateY(-5px);
 }
 
 /* EMERGENCY */
+
 .emergency{
 padding:100px 0;
 }
@@ -416,18 +464,6 @@ background:white;
 padding:40px;
 border-radius:30px;
 box-shadow:var(--shadow);
-position:relative;
-overflow:hidden;
-}
-
-.emergency-card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:5px;
-background:var(--gold);
 }
 
 .emergency-card h3{
@@ -450,14 +486,10 @@ color:white;
 text-decoration:none;
 border-radius:999px;
 font-weight:600;
-transition:.3s ease;
-}
-
-.call-btn:hover{
-background:var(--burgundy-dark);
 }
 
 /* FOOTER */
+
 .footer{
 background:#150707;
 color:#aaa;
@@ -473,7 +505,8 @@ margin-bottom:12px;
 font-weight:700;
 }
 
-/* FLOATING WHATSAPP */
+/* WHATSAPP */
+
 .whatsapp{
 position:fixed;
 right:20px;
@@ -492,8 +525,8 @@ box-shadow:0 10px 25px rgba(0,0,0,.2);
 z-index:999;
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
+
 .hero h1{
 font-size:48px;
 }
@@ -509,13 +542,27 @@ padding:35px 25px;
 .concierge-box h2{
 font-size:34px;
 }
+
+.language-switcher{
+top:15px;
+right:15px;
 }
+
+}
+
 </style>
 </head>
 
 <body>
 
+
+<div class="language-switcher">
+<button onclick="changeLanguage('es')">🇪🇸 ES</button>
+<button onclick="changeLanguage('en')">🇺🇸 EN</button>
+</div>
+
 <!-- HERO -->
+
 <section class="hero">
 
 <video autoplay muted loop playsinline>
@@ -526,7 +573,9 @@ font-size:34px;
 
 <div class="hero-content">
 <div class="brand">VERLOFT</div>
+
 <h1>Villa Lumar</h1>
+
 <p>
 Bienvenido a una experiencia premium diseñada para su comodidad,
 relajación y tranquilidad durante toda su estadía.
@@ -534,72 +583,58 @@ relajación y tranquilidad durante toda su estadía.
 
 <div class="hero-buttons">
 <a href="#guide" class="btn btn-gold">Explorar Guía</a>
-<a href="https://wa.me/18094995831" class="btn btn-glass">Contactar Asistencia</a>
+
+<a href="https://wa.me/18094995831" class="btn btn-glass">
+Contactar Asistencia
+</a>
 </div>
 </div>
+
 </section>
 
 <!-- NAV -->
+
 <div class="nav-wrapper" id="guide">
+
 <div class="nav">
-<button class="active" onclick="showSection('general',this)">General</button>
-<button onclick="showSection('cocina',this)">Cocina</button>
-<button onclick="showSection('habitaciones',this)">Habitaciones</button>
-<button onclick="showSection('exterior',this)">Exterior</button>
-<button onclick="showSection('tecnologia',this)">Tecnología</button>
-<button onclick="showSection('emergencia',this)">Soporte</button>
-</div>
-</div>
 
-<!-- QUICK ACTIONS -->
-<section class="quick-actions">
-<div class="container">
-<div class="quick-grid">
+<button class="active" onclick="showSection('general', this)">
+General
+</button>
 
-<div class="quick-card">
-<div class="quick-icon">📶</div>
-<h3>Wi‑Fi Premium</h3>
-<p>
-Conectividad estable de alta velocidad ideal para streaming y trabajo remoto.
-</p>
-</div>
+<button onclick="showSection('cocina', this)">
+Cocina
+</button>
 
-<div class="quick-card">
-<div class="quick-icon">🕒</div>
-<h3>Check‑out</h3>
-<p>
-Hora de salida: 11:00 AM.
-Contáctenos para late checkout sujeto a disponibilidad.
-</p>
-</div>
+<button onclick="showSection('habitaciones', this)">
+Habitaciones
+</button>
 
-<div class="quick-card">
-<div class="quick-icon">🔐</div>
-<h3>Acceso Inteligente</h3>
-<p>
-Entrada autónoma mediante cerradura digital con código privado.
-</p>
-</div>
+<button onclick="showSection('exterior', this)">
+Exterior
+</button>
 
-<div class="quick-card">
-<div class="quick-icon">🏝️</div>
-<h3>Experiencia VERLOFT</h3>
-<p>
-Diseñada para ofrecer una estadía moderna, elegante y sin complicaciones.
-</p>
-</div>
+<button onclick="showSection('tecnologia', this)">
+Tecnología
+</button>
+
+<button onclick="showSection('emergencia', this)">
+Soporte
+</button>
 
 </div>
 </div>
-</section>
 
 <!-- GENERAL -->
+
 <section class="section active" id="general">
+
 <div class="container">
 
 <div class="section-title">
 <span>INFORMACIÓN GENERAL</span>
 <h2>Todo lo esencial para su estadía</h2>
+
 <p>
 Acceda rápidamente a la información más importante de la propiedad.
 </p>
@@ -608,12 +643,15 @@ Acceda rápidamente a la información más importante de la propiedad.
 <div class="grid">
 
 <div class="card">
+
 <video controls playsinline poster="images/wifi.png">
 <source src="videos/wifi.mp4" type="video/mp4">
 </video>
 
 <div class="card-content">
-<h3>Wi‑Fi de Alta Velocidad</h3>
+
+<h3>Wi-Fi de Alta Velocidad</h3>
+
 <p>
 Conexión estable disponible en toda la propiedad para videollamadas,
 streaming y navegación.
@@ -621,34 +659,42 @@ streaming y navegación.
 
 <div class="info-box">
 <h4>Información</h4>
+
 <ul>
 <li>SSID: Villa-Lumar</li>
 <li>Contraseña: VillaLumar101418!</li>
 <li>No reiniciar el router</li>
 </ul>
+
 </div>
 </div>
 </div>
 
 <div class="card">
+
 <video controls playsinline poster="images/aire.png">
 <source src="videos/aire.mp4" type="video/mp4">
 </video>
 
 <div class="card-content">
+
 <h3>Aire Acondicionado</h3>
+
 <p>
 Para una mejor experiencia y eficiencia energética recomendamos
 mantener la temperatura entre 22° y 24°.
 </p>
 
 <div class="info-box warning">
+
 <h4>Uso Responsable</h4>
+
 <ul>
 <li>Apagar al salir de la propiedad</li>
 <li>Mantener puertas cerradas</li>
 <li>No modificar configuraciones avanzadas</li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -658,12 +704,15 @@ mantener la temperatura entre 22° y 24°.
 </section>
 
 <!-- COCINA -->
+
 <section class="section" id="cocina">
+
 <div class="container">
 
 <div class="section-title">
 <span>COCINA</span>
 <h2>Totalmente equipada</h2>
+
 <p>
 Todo lo necesario para preparar y disfrutar sus comidas cómodamente.
 </p>
@@ -672,17 +721,14 @@ Todo lo necesario para preparar y disfrutar sus comidas cómodamente.
 <div class="grid">
 
 <div class="card">
+
 <img src="images/estufa.png" alt="Estufa">
 
 <div class="card-content">
+
 <h3>Estufa y Horno</h3>
-<p>
-Equipos modernos listos para preparar desde comidas rápidas
-hasta cenas completas.
-</p>
 
 <div class="info-box">
-<h4>Cómo usar</h4>
 <ul>
 <li>Verifique que el gas esté abierto</li>
 <li>No dejar encendido sin supervisión</li>
@@ -690,33 +736,25 @@ hasta cenas completas.
 </ul>
 </div>
 
-<div class="info-box warning">
-<h4>Seguridad</h4>
-<ul>
-<li>Si detecta olor a gas, cierre válvula y contacte soporte</li>
-<li>No permitir uso por niños sin supervisión</li>
-</ul>
-</div>
 </div>
 </div>
 
 <div class="card">
+
 <img src="images/cafetera.png" alt="Cafetera">
 
 <div class="card-content">
+
 <h3>Cafetera</h3>
-<p>
-Disfrute café recién preparado durante toda su estadía.
-</p>
 
 <div class="info-box">
-<h4>Uso</h4>
 <ul>
 <li>Llenar depósito de agua</li>
 <li>Agregar café molido o cápsula</li>
 <li>Apagar luego de utilizar</li>
 </ul>
 </div>
+
 </div>
 </div>
 
@@ -725,12 +763,15 @@ Disfrute café recién preparado durante toda su estadía.
 </section>
 
 <!-- HABITACIONES -->
+
 <section class="section" id="habitaciones">
+
 <div class="container">
 
 <div class="section-title">
 <span>DESCANSO</span>
 <h2>Habitaciones premium</h2>
+
 <p>
 Espacios diseñados para brindar privacidad, confort y tranquilidad.
 </p>
@@ -738,45 +779,41 @@ Espacios diseñados para brindar privacidad, confort y tranquilidad.
 
 <div class="grid">
 
-<!-- HABITACIÓN 1 -->
 <div class="card">
+
 <img src="images/habitacion1.jpg" alt="Habitación Principal">
 
 <div class="card-content">
+
 <h3>Habitación Principal</h3>
-<p>
-Habitación elegante equipada para ofrecer un descanso cómodo y relajante.
-</p>
 
 <div class="info-box">
-<h4>Normas</h4>
 <ul>
 <li>No fumar dentro de la habitación</li>
 <li>No mover mobiliario</li>
 <li>Reportar daños inmediatamente</li>
 </ul>
 </div>
+
 </div>
 </div>
 
-<!-- HABITACIÓN 2 -->
 <div class="card">
+
 <img src="images/habitacion2.jpg" alt="Habitación Secundaria">
 
 <div class="card-content">
+
 <h3>Habitación Secundaria</h3>
-<p>
-Habitación elegante equipada para ofrecer un descanso cómodo y relajante.
-</p>
 
 <div class="info-box">
-<h4>Normas</h4>
 <ul>
 <li>No fumar dentro de la habitación</li>
 <li>No mover mobiliario</li>
 <li>Reportar daños inmediatamente</li>
 </ul>
 </div>
+
 </div>
 </div>
 
@@ -785,12 +822,15 @@ Habitación elegante equipada para ofrecer un descanso cómodo y relajante.
 </section>
 
 <!-- EXTERIOR -->
+
 <section class="section" id="exterior">
+
 <div class="container">
 
 <div class="section-title">
 <span>EXTERIOR</span>
 <h2>Espacios para disfrutar</h2>
+
 <p>
 Áreas creadas para relajarse y compartir momentos especiales.
 </p>
@@ -799,16 +839,14 @@ Habitación elegante equipada para ofrecer un descanso cómodo y relajante.
 <div class="grid">
 
 <div class="card">
+
 <img src="images/piscina.png" alt="Piscina">
 
 <div class="card-content">
+
 <h3>Piscina Privada</h3>
-<p>
-Disfrute un ambiente relajante diseñado para complementar su experiencia.
-</p>
 
 <div class="info-box">
-<h4>Horario</h4>
 <ul>
 <li>8:00 AM – 10:00 PM</li>
 <li>No utilizar vidrio cerca de la piscina</li>
@@ -816,32 +854,25 @@ Disfrute un ambiente relajante diseñado para complementar su experiencia.
 </ul>
 </div>
 
-<div class="info-box warning">
-<h4>Seguridad</h4>
-<ul>
-<li>Supervisar niños en todo momento</li>
-<li>No nadar bajo efectos del alcohol</li>
-</ul>
-</div>
 </div>
 </div>
 
 <div class="card">
-<img src="images/lounge.jpg" alt="BBQ">
+
+<img src="images/lounge.jpg" alt="Lounge">
 
 <div class="card-content">
+
 <h3>Lounge Exterior</h3>
-<p>
-Espacio exterior ideal para relajarse, compartir y disfrutar del ambiente al aire libre.</p>
 
 <div class="info-box">
-<h4>Uso</h4>
 <ul>
-<li>Mantener el area limpia y organizada</li>
-<li>No Mover el mobiliario exterior</li>
+<li>Mantener el área limpia y organizada</li>
+<li>No mover el mobiliario exterior</li>
 <li>Ideal para descanso y reuniones tranquilas</li>
 </ul>
 </div>
+
 </div>
 </div>
 
@@ -849,13 +880,16 @@ Espacio exterior ideal para relajarse, compartir y disfrutar del ambiente al air
 </div>
 </section>
 
-<!-- TECNOLOGÍA -->
+<!-- TECNOLOGIA -->
+
 <section class="section" id="tecnologia">
+
 <div class="container">
 
 <div class="section-title">
 <span>TECNOLOGÍA</span>
 <h2>Experiencia moderna</h2>
+
 <p>
 Sistemas diseñados para brindar comodidad y seguridad.
 </p>
@@ -864,54 +898,37 @@ Sistemas diseñados para brindar comodidad y seguridad.
 <div class="grid">
 
 <div class="card">
+
 <img src="images/cerradura.png" alt="Cerradura">
 
 <div class="card-content">
+
 <h3>Cerradura Inteligente</h3>
-<p>
-Acceso seguro y autónomo mediante código privado.
-</p>
 
 <div class="info-box">
-<h4>Acceso</h4>
 <ul>
 <li>Ingresar código asignado</li>
 <li>Esperar confirmación sonora</li>
-<li>El código expira automáticamente al finalizar la estadía</li>
+<li>El código expira automáticamente</li>
 </ul>
 </div>
+
 </div>
 </div>
 
 <div class="card">
+
 <img src="images/seguridad.png" alt="Seguridad">
 
 <div class="card-content">
+
 <h3>Seguridad</h3>
+
 <p>
 Sistema de vigilancia en área del parqueo para mayor tranquilidad.
 </p>
-</div>
-</div>
 
 </div>
-</div>
-</section>
-
-<!-- CONCIERGE -->
-<section class="concierge">
-<div class="container">
-
-<div class="concierge-box">
-<h2>Asistencia VERLOFT</h2>
-<p>
-Nuestro equipo está disponible para ayudarle durante toda su estadía.
-Solicite asistencia, transporte, limpieza adicional o recomendaciones locales.
-</p>
-
-<div class="concierge-actions">
-<a href="https://wa.me/18094995831" class="concierge-btn">🧹 Limpieza Extra</a>
-<a href="https://wa.me/18094995831" class="concierge-btn">🛎️ Soporte General</a>
 </div>
 
 </div>
@@ -919,12 +936,15 @@ Solicite asistencia, transporte, limpieza adicional o recomendaciones locales.
 </section>
 
 <!-- EMERGENCIA -->
-<section class="emergency section" id="emergencia">
+
+<section class="section emergency" id="emergencia">
+
 <div class="container">
 
 <div class="section-title">
-<span>SOPORTE Y EMERGENCIA</span>
+<span>SOPORTE</span>
 <h2>Estamos para ayudarle</h2>
+
 <p>
 Contactos importantes para asistencia inmediata durante su estadía.
 </p>
@@ -933,19 +953,61 @@ Contactos importantes para asistencia inmediata durante su estadía.
 <div class="emergency-grid">
 
 <div class="emergency-card">
+
 <h3>🚨 Emergencias</h3>
+
 <p>
-Para situaciones médicas, incendios o cualquier riesgo inmediato.
+Para situaciones médicas o emergencias inmediatas.
 </p>
-<a href="tel:911" class="call-btn">Llamar 911</a>
+
+<a href="tel:911" class="call-btn">
+Llamar 911
+</a>
+
 </div>
 
 <div class="emergency-card">
+
 <h3>🏠 Soporte VERLOFT</h3>
+
 <p>
-Asistencia para accesos, electricidad, agua, internet o cualquier inconveniente.
+Asistencia para cualquier inconveniente dentro de la propiedad.
 </p>
-<a href="tel:+18094995831" class="call-btn">Contactar Soporte</a>
+
+<a href="tel:+18094995831" class="call-btn">
+Contactar Soporte
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONCIERGE -->
+
+<section class="concierge">
+
+<div class="container">
+
+<div class="concierge-box">
+
+<h2>Asistencia VERLOFT</h2>
+
+<p>
+Nuestro equipo está disponible para ayudarle durante toda su estadía.
+</p>
+
+<div class="concierge-actions">
+
+<a href="https://wa.me/18094995831" class="concierge-btn">
+🧹 Limpieza Extra
+</a>
+
+<a href="https://wa.me/18094995831" class="concierge-btn">
+🛎️ Soporte General
+</a>
+
 </div>
 
 </div>
@@ -953,35 +1015,249 @@ Asistencia para accesos, electricidad, agua, internet o cualquier inconveniente.
 </section>
 
 <!-- FOOTER -->
+
 <footer class="footer">
+
 <div class="logo">VERLOFT</div>
+
 <p>Luxury Property Experience</p>
+
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/18094995831" class="whatsapp">💬</a>
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/18094995831" class="whatsapp">
+💬
+</a>
 
 <script>
-function showSection(id,button){
 
-document.querySelectorAll('.section').forEach(section=>{
-section.classList.remove('active');
+
+
+/* NAV */
+
+function showSection(id, button){
+
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const target = document.getElementById(id);
+
+    if(target){
+        target.classList.add('active')
+
+        window.scrollTo({
+            top: target.offsetTop - 120,
+            behavior: 'smooth'
+        });
+    }
+
+   document.querySelectorAll('.nav button').forEach(btn => {
+    btn.classList.remove('active');
 });
 
-document.getElementById(id).classList.add('active');
-
-document.querySelectorAll('.nav button').forEach(btn=>{
-btn.classList.remove('active');
-});
-
-button.classList.add('active');
-
-window.scrollTo({
-top:document.getElementById(id).offsetTop - 120,
-behavior:'smooth'
-});
+    if(button){
+        button.classList.add('active')
+    }
 }
+
+
+/* TRANSLATIONS */
+
+const translations = {
+    en: {
+
+        "Explorar Guía": "Explore Guide",
+        "Contactar Asistencia": "Contact Support",
+
+        "Bienvenido a una experiencia premium diseñada para su comodidad, relajación y tranquilidad durante toda su estadía.":
+        "Welcome to a premium experience designed for your comfort, relaxation and peace during your stay.",
+
+        "General": "General",
+        "Cocina": "Kitchen",
+        "Habitaciones": "Rooms",
+        "Exterior": "Outdoor",
+        "Tecnología": "Technology",
+        "Soporte": "Support",
+
+        "INFORMACIÓN GENERAL": "GENERAL INFORMATION",
+        "Todo lo esencial para su estadía": "Everything essential for your stay",
+        "Acceda rápidamente a la información más importante de la propiedad.":
+        "Quickly access the most important property information.",
+
+        "Wi-Fi de Alta Velocidad": "High-Speed WiFi",
+
+        "Conexión estable disponible en toda la propiedad para videollamadas, streaming y navegación.":
+        "Stable connection available throughout the property for video calls, streaming and browsing.",
+
+        "Información": "Information",
+        "Contraseña: VillaLumar101418!": "Password: VillaLumar101418!",
+        "No reiniciar el router": "Do not restart the router",
+
+        "Aire Acondicionado": "Air Conditioning",
+
+        "Para una mejor experiencia y eficiencia energética recomendamos mantener la temperatura entre 22° y 24°.":
+        "For better comfort and energy efficiency we recommend keeping the temperature between 22° and 24°.",
+
+        "Uso Responsable": "Responsible Use",
+        "Apagar al salir de la propiedad": "Turn off when leaving the property",
+        "Mantener puertas cerradas": "Keep doors closed",
+        "No modificar configuraciones avanzadas": "Do not modify advanced settings",
+
+        "COCINA": "KITCHEN",
+        "Totalmente equipada": "Fully Equipped",
+
+        "Todo lo necesario para preparar y disfrutar sus comidas cómodamente.":
+        "Everything needed to prepare and enjoy your meals comfortably.",
+
+        "Estufa y Horno": "Stove and Oven",
+        "Verifique que el gas esté abierto": "Make sure the gas is open",
+        "No dejar encendido sin supervisión": "Do not leave unattended",
+        "Apagar completamente al finalizar": "Turn off completely after use",
+
+        "Cafetera": "Coffee Maker",
+        "Llenar depósito de agua": "Fill water tank",
+        "Agregar café molido o cápsula": "Add ground coffee or capsule",
+        "Apagar luego de utilizar": "Turn off after use",
+
+        "DESCANSO": "REST",
+        "Habitaciones premium": "Premium Rooms",
+
+        "Espacios diseñados para brindar privacidad, confort y tranquilidad.":
+        "Spaces designed for privacy, comfort and peace.",
+
+        "Habitación Principal": "Master Bedroom",
+        "Habitación Secundaria": "Secondary Bedroom",
+
+        "No fumar dentro de la habitación": "No smoking inside the room",
+        "No mover mobiliario": "Do not move furniture",
+        "Reportar daños inmediatamente": "Report damages immediately",
+
+        "EXTERIOR": "OUTDOOR",
+        "Espacios para disfrutar": "Spaces to Enjoy",
+
+        "Áreas creadas para relajarse y compartir momentos especiales.":
+        "Areas created to relax and share special moments.",
+
+        "Piscina Privada": "Private Pool",
+        "No utilizar vidrio cerca de la piscina": "Do not use glass near the pool",
+        "Toallas disponibles": "Towels available",
+
+        "Lounge Exterior": "Outdoor Lounge",
+        "Mantener el área limpia y organizada": "Keep the area clean and organized",
+        "No mover el mobiliario exterior": "Do not move outdoor furniture",
+        "Ideal para descanso y reuniones tranquilas":
+        "Ideal for relaxing and quiet meetings",
+
+        "TECNOLOGÍA": "TECHNOLOGY",
+        "Experiencia moderna": "Modern Experience",
+
+        "Sistemas diseñados para brindar comodidad y seguridad.":
+        "Systems designed to provide comfort and security.",
+
+        "Cerradura Inteligente": "Smart Lock",
+        "Ingresar código asignado": "Enter assigned code",
+        "Esperar confirmación sonora": "Wait for confirmation sound",
+        "El código expira automáticamente": "Code expires automatically",
+
+        "Seguridad": "Security",
+
+        "Sistema de vigilancia en área del parqueo para mayor tranquilidad.":
+        "Surveillance system in the parking area for greater peace of mind.",
+
+        "SOPORTE": "SUPPORT",
+        "Estamos para ayudarle": "We're here to help",
+
+        "Contactos importantes para asistencia inmediata durante su estadía.":
+        "Important contacts for immediate assistance during your stay.",
+
+        "🚨 Emergencias": "🚨 Emergencies",
+
+        "Para situaciones médicas o emergencias inmediatas.":
+        "For medical situations or immediate emergencies.",
+
+        "Llamar 911": "Call 911",
+
+        "🏠 Soporte VERLOFT": "🏠 VERLOFT Support",
+
+        "Asistencia para cualquier inconveniente dentro de la propiedad.":
+        "Assistance for any inconvenience inside the property.",
+
+        "Contactar Soporte": "Contact Support",
+
+        "Asistencia VERLOFT": "VERLOFT Assistance",
+
+        "Nuestro equipo está disponible para ayudarle durante toda su estadía.":
+        "Our team is available to help you during your stay.",
+
+        "🧹 Limpieza Extra": "🧹 Extra Cleaning",
+        "🛎️ Soporte General": "🛎️ General Support",
+
+        "Luxury Property Experience": "Luxury Property Experience"
+    }
+};
+
+
+/* CHANGE LANGUAGE */
+
+function changeLanguage(lang){
+
+    const elements = document.querySelectorAll(
+        "h1,h2,h3,h4,p,a,button,li,span"
+    );
+
+    if(lang === "es"){
+
+        elements.forEach(el => {
+            const originalText = el.getAttribute("data-original");
+
+            if(originalText){
+                el.innerText = originalText;
+            }
+        });
+
+        localStorage.removeItem("selectedLanguage");
+        return;
+    }
+
+    elements.forEach(el => {
+
+        let originalText = el.getAttribute("data-original");
+
+        if(!originalText){
+            originalText = el.innerText.trim().replace(/\s+/g, " ");
+            el.setAttribute("data-original", originalText);
+        }
+
+        if(translations[lang] && translations[lang][originalText]){
+            el.innerText = translations[lang][originalText];
+        }
+
+    });
+
+    localStorage.setItem("selectedLanguage", lang);
+}
+
+
+/* LOAD SAVED LANGUAGE */
+
+window.addEventListener("load", function(){
+
+    const savedLanguage = localStorage.getItem("selectedLanguage");
+
+    if(savedLanguage){
+        changeLanguage(savedLanguage);
+    }
+
+});
+
 </script>
+
+
+</script>
+
+
 
 </body>
 </html>
